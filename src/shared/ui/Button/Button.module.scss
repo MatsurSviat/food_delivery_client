@@ -1,0 +1,99 @@
+.button {
+    padding: 6px 8px;
+    color: var(--palette-text-main);
+    font-weight: normal;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: opacity 0.3s linear;
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+
+    // sizes
+    &.size-xxs {
+        width: 40px;
+        height: 40px;
+        padding: 10px 8px;
+    }
+
+    &.size-xs {
+        width: 76px;
+        height: 33px;
+    }
+
+    &.size-s {
+        height: 30px;
+        padding: 0;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 28px;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    &.size-l {
+        width: 111px;
+        height: 40px;
+    }
+
+    &.size-m {
+        width: 248px;
+        height: 45px;
+    }
+
+    &.size-xl {
+        width: 302px;
+        height: 50px;
+    }
+
+    // color
+    &.color-white {
+        background: #fff;
+    }
+
+    &.color-yellow {
+        background: #fdc27a;
+    }
+
+    // forms
+    &.square {
+        position: absolute;
+        top: 57px;
+        left: 93px;
+        display: flex;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+
+    &.wave {
+        width: 100px;
+        height: 24px;
+        padding: 0;
+        font-weight: 600;
+        font-size: 8px;
+        border-radius: 0 15px;
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+
+    // outlined
+    &.outlined {
+        width: 80px;
+        height: 30px;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 15px;
+        border: 1.5px solid #616f80;
+    }
+}

@@ -1,0 +1,74 @@
+.InputContainer {
+    width: 100%;
+
+    .InputLabel {
+        display: inline-block;
+        color: var(--palette-text-main-sub);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 28px;
+    }
+
+    .InputInnerWrapper {
+        position: relative;
+
+        // purpose
+        &.purpose-log {
+            width: 276px;
+            padding-bottom: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 28px;
+            border-bottom: 1px solid #104e5b;
+        }
+
+        &.purpose-search {
+            width: 241px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 28px;
+        }
+
+        .InputIcon {
+            position: absolute;
+
+            // svg-position
+            &.position-right {
+                top: calc(50% - 15px);
+                right: 0;
+            }
+
+            &.position-left {
+                top: calc(50% - 9px);
+                left: 17px;
+            }
+
+            // svg-size
+            &.svg-size-small {
+                width: 20px;
+                height: 20px;
+            }
+
+            &.svg-size-big {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .Input {
+            width: 100%;
+            border: 1px solid transparent;
+
+            // input color
+            &.color-transparent {
+                background: transparent;
+            }
+
+            &.color-white {
+                padding-left: 48px;
+                background: #fff;
+                border-radius: 20px;
+            }
+        }
+    }
+}

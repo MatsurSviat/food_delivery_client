@@ -1,0 +1,26 @@
+.title-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 29px 29px 0 23px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.search-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 27px 36px 0 23px;
+}
+
+.slider {
+    width: 340px;
+    margin: 35px 0 0 15px;
+}

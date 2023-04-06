@@ -1,0 +1,166 @@
+.wrapper {
+    width: 302px;
+    height: 136px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0 0 0 / 5%);
+}
+
+.courierInfoCont {
+    display: flex;
+    height: 77px;
+    border-bottom: 1px dashed #bebebe;
+}
+
+.courierPhotoCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 13px;
+    margin-left: 15px;
+}
+
+.courierPhoto {
+    width: 50px;
+    height: 52px;
+    border-radius: 15px;
+}
+
+.courierDataCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 147px;
+    padding-top: 12px;
+    padding-bottom: 18px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.id {
+    color: #616f80;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: normal;
+}
+
+.position {
+    color: #bebebe;
+    font-weight: 600;
+    font-size: 11px;
+    font-style: normal;
+}
+
+.courierCallCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin-top: 16px;
+    margin-left: 15px;
+    background: #fdc27a;
+    border-radius: 15px;
+    box-shadow: 0 4px 5px rgb(0 0 0 / 5%);
+}
+
+.courierCall {
+    width: 20px;
+    height: 20px;
+}
+
+.deliveryInfoCont {
+    display: flex;
+    align-items: center;
+}
+
+.deliveryTimeCont {
+    display: flex;
+    gap: 6px;
+    margin-top: 13px;
+    margin-right: 12px;
+    margin-left: 20px;
+}
+
+.timeImgCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #fdc27a;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px rgba(0 0 0 / 5%);
+}
+
+.timeImg {
+    width: 18px;
+    height: 18px;
+}
+
+.timeTextCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeTitle {
+    color: #bebebe;
+    font-weight: 500;
+    font-size: 8px;
+    font-style: normal;
+}
+
+.time {
+    color: #104e5b;
+    font-weight: 600;
+    font-size: 9px;
+    font-style: normal;
+}
+
+.deliveryCityCont {
+    display: flex;
+    gap: 6px;
+}
+
+.CityImgCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 13px;
+    background: #fdc27a;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px rgba(0 0 0 / 5%);
+}
+
+.cityImg {
+    width: 18px;
+    height: 18px;
+}
+
+.cityTextCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+.cityTitle {
+    color: #bebebe;
+    font-weight: 500;
+    font-size: 8px;
+    font-style: normal;
+}
+
+.city {
+    color: #104e5b;
+    font-weight: 600;
+    font-size: 9px;
+    font-style: normal;
+}

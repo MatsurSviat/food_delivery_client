@@ -1,0 +1,46 @@
+.header {
+    position: fixed;
+    right: 0;
+    left: 237px;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: var(--palette-background-main);
+
+    &__input {
+        display: flex;
+        width: 649px;
+    }
+
+    &__avatar {
+        display: flex;
+    }
+
+    &__profile {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__btn {
+        display: flex;
+    }
+
+    &__title {
+        color: var(--palette-text-dark-1);
+        font-weight: 600;
+        font-size: var(--typography-font-size-s);
+        font-style: normal;
+        line-height: 19px;
+    }
+
+    &__subtitle {
+        color: var(--palette-text-light);
+        font-weight: 300;
+        font-size: var(--typography-font-size-main);
+        font-style: normal;
+        line-height: 17px;
+    }
+}

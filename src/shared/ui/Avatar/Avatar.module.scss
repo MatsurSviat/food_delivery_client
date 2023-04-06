@@ -1,0 +1,17 @@
+.avatar {
+    border-radius: 50%;
+
+    &.small {
+        width: 54.1px;
+        height: 54.1px;
+    }
+
+    &.big {
+        width: 70.13px;
+        height: 93.5px;
+    }
+
+    &.bordered {
+        border: 2px solid var(--palette-dark-mode-white);
+    }
+}

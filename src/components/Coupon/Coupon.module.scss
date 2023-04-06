@@ -1,0 +1,33 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 289px;
+    height: 145px;
+    margin-top: 39px;
+    background: #ffe3c0;
+    border-radius: 25px;
+
+    .info-btn {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 26px;
+        }
+
+        .subtitle {
+            color: #616f80;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 28px;
+        }
+
+        .button {
+            margin-top: 15px;
+        }
+    }
+}

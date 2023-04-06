@@ -1,0 +1,12 @@
+@use './reset';
+@import './reset';
+@import './lightTheme';
+@import './darkTheme';
+@import './zIndex';
+
+body {
+    color: var(--palette-text-main);
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    background-color: var(--palette-background-main);
+}

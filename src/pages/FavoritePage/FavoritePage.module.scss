@@ -1,0 +1,32 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .coupon {
+        margin-left: 30px;
+    }
+
+    .favorite {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 35px 36px 0 30px;
+    }
+
+    .favorite-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .foodCards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 29px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 23px;
+    }
+}

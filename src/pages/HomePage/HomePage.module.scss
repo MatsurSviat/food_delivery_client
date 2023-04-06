@@ -1,0 +1,14 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .foodCards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 29px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 23px;
+    }
+}

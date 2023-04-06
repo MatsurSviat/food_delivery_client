@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        .password {
+            .password-link {
+                margin-top: 12px;
+                font-weight: 500;
+                font-size: var(--typography-font-size-s);
+                line-height: 19px;
+            }
+        }
+    }
+
+    .forgot {
+        margin-top: -9px;
+        margin-left: 156px;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: right;
+    }
+
+    .login-btn {
+        margin-top: 101px;
+    }
+}
