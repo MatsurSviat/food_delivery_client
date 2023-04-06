@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
 
@@ -6,7 +8,7 @@ import image from '../../shared/assets/images/image_grilled_fish.png';
 
 import styles from './FoodCard.module.scss';
 
-export const FoodCard = () => {
+export const FoodCard = memo(() => {
     const { wrap, imageContainer, foodImg, likeImg, textContainer, title, subtitle, price, dollar, addButtonCont } =
         styles;
 
@@ -30,4 +32,6 @@ export const FoodCard = () => {
             </div>
         </div>
     );
-};
+});
+
+FoodCard.displayName = 'FoodCard';

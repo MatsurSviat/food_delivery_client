@@ -23,20 +23,20 @@ export const NavBar = memo(() => {
                 </NavLink>
                 <div className={styles['footer-figure']}>
                     <div className={styles['main-favorite']}>
-                        <NavLink to={ROUTES.MAIN} className={styles['main-btn']}>
+                        <NavLink to={ROUTES.MAIN}>
                             <Icon src={HomeIcon} alt="home" className={styles['home-img']} />
                         </NavLink>
-                        <NavLink to={ROUTES.FAVORITE} className={styles['favorite-btn']}>
+                        <NavLink to={ROUTES.FAVORITE}>
                             <Icon src={FavoriteIcon} alt="favorite" className={styles['favorite-img']} />
                         </NavLink>
                     </div>
                     <div className={styles['empty-wrap']} />
                     <div className={styles['notific-profile']}>
-                        <NavLink to={ROUTES.NOTIFICATIONS} className={styles['notific-btn']}>
-                            <Icon src={NotificationsIcon} alt="notification" className={styles['notification-img']} />
-                        </NavLink>
-                        <NavLink to={ROUTES.PROFILE} className={styles['profile-btn']}>
+                        <NavLink to={ROUTES.PROFILE}>
                             <Icon src={ProfileIcon} alt="profile" className={styles['profile-img']} />
+                        </NavLink>
+                        <NavLink to={ROUTES.NOTIFICATIONS}>
+                            <Icon src={NotificationsIcon} alt="notification" className={styles['notification-img']} />
                         </NavLink>
                     </div>
                 </div>

@@ -87,6 +87,12 @@
         border-radius: 50%;
     }
 
+    &.cross {
+        width: 24px;
+        height: 24px;
+        background: transparent;
+    }
+
     // outlined
     &.outlined {
         width: 80px;

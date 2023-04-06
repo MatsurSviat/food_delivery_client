@@ -14,10 +14,22 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     circle?: boolean;
     color?: ButtoColor;
     outlined?: boolean;
+    cross?: boolean;
 }
 
 export const Button = memo((props: IButtonProps) => {
-    const { className, children, size = 'l', color = 'yellow', square, wave, circle, outlined, ...otherProps } = props;
+    const {
+        className,
+        children,
+        size = 'l',
+        color = 'yellow',
+        square,
+        wave,
+        circle,
+        outlined,
+        cross,
+        ...otherProps
+    } = props;
 
     return (
         <button
@@ -27,6 +39,7 @@ export const Button = memo((props: IButtonProps) => {
                 [cls.wave]: wave,
                 [cls.circle]: circle,
                 [cls.outlined]: outlined,
+                [cls.cross]: cross,
             })}
             {...otherProps}
         >
