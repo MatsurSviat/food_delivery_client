@@ -7,6 +7,10 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 28px;
+        
+        &.InputLabelRadio {
+            margin-right: 40px;
+        }
     }
 
     .InputInnerWrapper {

@@ -1,0 +1,27 @@
+.link {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    color: var(--palette-secondary-main);
+    text-decoration: none;
+    border-radius: 10px;
+
+    svg {
+        margin-right: 15px;
+
+        path {
+            fill: currentcolor;
+        }
+    }
+
+    &.active {
+        color: var(--palette-primary-light-2);
+        background: var(--palette-primary-light-4);
+
+        svg {
+            path {
+                fill: currentcolor;
+            }
+        }
+    }
+}

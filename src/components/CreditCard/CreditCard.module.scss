@@ -1,0 +1,101 @@
+.wrap {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    justify-content: center;
+
+    .card-container {
+        width: 240px;
+        height: 145px;
+        background: #9c9c9c;
+        border-radius: 20px;
+        box-shadow: 0 4px 5px rgba(0 0 0 / 5%);
+
+        .amazon-img {
+            float: right;
+            width: 41px;
+            height: 12px;
+            margin-top: 13px;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        .name-container {
+            display: flex;
+            align-items: center;
+            width: 240px;
+            height: 25px;
+            padding-right: 20px;
+            padding-left: 20px;
+            background: #104e5b;
+
+            .name {
+                color: #fff;
+                font-weight: 400;
+                font-size: 11px;
+                font-style: normal;
+            }
+        }
+
+        .card-number {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 10px;
+            font-style: normal;
+        }
+
+        .sum-logo-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-top: 18px;
+            margin-left: 20px;
+
+            .sum-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .sum {
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    font-style: normal;
+                }
+            }
+
+            .logo-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .logo-img {
+                    width: 43px;
+                    height: 25px;
+                }
+
+                .logo {
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 9px;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+
+    .plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -6px;
+        padding: -23px 2px;
+        font-size: 41px;
+        text-align: cet;
+        text-align: center;
+    }
+}

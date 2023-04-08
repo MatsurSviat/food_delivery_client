@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import cls from './Button.module.scss';
 
-type ButtonSize = 'xxxs' | 'xxs' | 'xs' | 's' | 'l' | 'm' | 'xl'; // 26/26 | 40/40 | 76/33 | 90/30 | 111/40 | 248/45 | 302\50
+type ButtonSize = 'xxxs' | 'xxs' | 'xsx' | 'xs' | 's' | 'l' | 'm' | 'xl'; //  26/26 | 40/40 | 50/50 | 76/33 | 90/30 | 111/40 | 248/45 | 302\50
 type ButtonColor = 'white' | 'yellow';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

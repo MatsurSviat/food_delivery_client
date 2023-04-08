@@ -6,9 +6,9 @@ import { ROUTES } from 'shared/constants/routes';
 import { FULL_URL_SIGN_IN, FULL_URL_SIGN_UP } from 'shared/constants/url';
 import { Icon } from 'shared/ui/Icon';
 
-import styles from './Logo.module.scss';
+import styles from './SignTop.module.scss';
 
-export const Logo = memo(() => {
+export const SignTop = memo(() => {
     const { logo, title, subtitle, buttons, active } = styles;
     const routerLocation = window.location.href;
 
@@ -39,4 +39,4 @@ export const Logo = memo(() => {
     );
 });
 
-Logo.displayName = 'Logo';
+SignTop.displayName = 'SignTop';

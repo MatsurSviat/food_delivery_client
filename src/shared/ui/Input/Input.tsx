@@ -19,6 +19,8 @@ interface IInputProps extends HTMLInputProps {
     iconSize?: IconSize;
     inputColor?: InputColor;
     promo?: boolean;
+    iconRadio?: ReactElement;
+    InputLabelRadio?: boolean;
 }
 
 export const Input = memo((props: IInputProps) => {
@@ -33,7 +35,9 @@ export const Input = memo((props: IInputProps) => {
         position,
         iconSize,
         inputColor,
+        iconRadio,
         promo,
+        InputLabelRadio,
         ...otherProps
     } = props;
 
@@ -51,8 +55,23 @@ export const Input = memo((props: IInputProps) => {
 
     return (
         <div className={classNames(cls.InputContainer, className)}>
+            {iconRadio && (
+                <span
+                    className={classNames(
+                        cls.InputIcon,
+                        className,
+                        cls[`svg-size-${iconSize}`],
+                    )}
+                >
+                    {iconRadio}
+                </span>
+            )}
+
             {label && (
-                <label className={cls.InputLabel} htmlFor={label.toLowerCase()}>
+                <label
+                    className={classNames(cls.InputLabel, className, { [cls.InputLabelRadio]: InputLabelRadio })}
+                    htmlFor={label.toLowerCase()}
+                >
                     {label}
                 </label>
             )}

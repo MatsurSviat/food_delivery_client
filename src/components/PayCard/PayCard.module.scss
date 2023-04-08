@@ -1,0 +1,36 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 17px;
+    align-items: center;
+    justify-content: center;
+
+    .payment-methods {
+        top: 532px;
+        left: 39px;
+        width: 240px;
+        height: 150px;
+        padding: 24px 26px 27px 28px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0 0 0 / 5%);
+
+        .inputRadio {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -6px;
+        padding: -23px 2px;
+        font-size: 41px;
+        text-align: cet;
+        text-align: center;
+    }
+}

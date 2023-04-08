@@ -1,0 +1,30 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    justify-content: center;
+
+    .tab-container {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 19px;
+        padding-left: 29px;
+
+        .account {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+    }
+
+    .active {
+        display: flex;
+    }
+}

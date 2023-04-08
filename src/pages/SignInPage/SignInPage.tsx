@@ -1,13 +1,14 @@
 import { memo, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Logo } from 'components/Logo';
+import { SignTop } from 'components/SignTop';
+import { ReactComponent as EyeSign } from 'shared/assets/icons/show-password-eye.svg';
 import { ROUTES } from 'shared/constants/routes';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { signIn, useAppDispatch } from 'store';
 
-import { ReactComponent as EyeSign } from '../../shared/assets/icons/show-password-eye.svg';
+import { ReactComponent as EyeSignClosed } from '../../shared/assets/icons/show-password-eye-closed.svg';
 
 import styles from './SignIn.module.scss';
 
@@ -16,6 +17,7 @@ export const SignInPage = memo(() => {
     const { wrapper, form, password, forgot } = styles;
     const [userEmail, setUserEmail] = useState<string>('first@mail.ru');
     const [userPassword, setUserPassword] = useState<string>('test-pass');
+    const [passwordShown, setPasswordShown] = useState(false);
     const dispatch = useAppDispatch();
 
     const handlerUserData = useCallback((value: string, name?: string) => {
@@ -30,9 +32,13 @@ export const SignInPage = memo(() => {
         navigate(ROUTES.MAIN);
     }, [dispatch, navigate, userEmail, userPassword]);
 
+    const togglePassword = () => {
+        setPasswordShown(!passwordShown);
+    };
+
     return (
         <div className={wrapper}>
-            <Logo />
+            <SignTop />
             <div className={form}>
                 <Input
                     name="email"
@@ -46,7 +52,7 @@ export const SignInPage = memo(() => {
                 />
                 <div className={password}>
                     <Input
-                        type="password"
+                        type={passwordShown ? 'text' : 'password'}
                         name="password"
                         placeholder="Enter Password"
                         label="Password"
@@ -56,7 +62,13 @@ export const SignInPage = memo(() => {
                         inputColor="transparent"
                         value={userPassword}
                         onChange={handlerUserData}
-                        icon={<EyeSign />}
+                        icon={
+                            passwordShown ? (
+                                <EyeSignClosed onClick={togglePassword} />
+                            ) : (
+                                <EyeSign onClick={togglePassword} />
+                            )
+                        }
                     />
                 </div>
             </div>
