@@ -1,0 +1,53 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: 165px;
+        align-items: center;
+        margin-top: 29px;
+
+        .title {
+            font-weight: 700;
+            line-height: 36px;
+        }
+
+        .svg {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) saturate(100%) invert(22%) sepia(77%) saturate(455%) hue-rotate(143deg)
+                brightness(95%) contrast(96%);
+        }
+    }
+
+    .orders {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 31px;
+    }
+
+    .promo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 103px 29px 0 24px;
+
+        .apply {
+            position: absolute;
+            margin-left: 60%;
+        }
+    }
+
+    .confirm-btn {
+        margin-top: 26px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 28px;
+    }
+}

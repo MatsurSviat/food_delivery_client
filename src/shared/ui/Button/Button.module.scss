@@ -17,6 +17,12 @@
     }
 
     // sizes
+    &.size-xxxs {
+        width: 26px;
+        height: 26px;
+        padding: 0;
+    }
+
     &.size-xxs {
         width: 40px;
         height: 40px;
@@ -24,8 +30,15 @@
     }
 
     &.size-xs {
+        display: flex;
+        align-items: center;
         width: 76px;
         height: 33px;
+        padding: 6px 19px;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 28px;
+        text-align: center;
     }
 
     &.size-s {
@@ -87,9 +100,10 @@
         border-radius: 50%;
     }
 
-    &.cross {
-        width: 24px;
-        height: 24px;
+    &.close {
+        width: 25px;
+        height: 25px;
+        padding: 0;
         background: transparent;
     }
 

@@ -69,6 +69,15 @@
                 background: #fff;
                 border-radius: 20px;
             }
+
+            // input promo
+            &.promo {
+                width: 302px;
+                height: 55px;
+                padding-left: 48px;
+                background: #fff;
+                border-radius: 15px;
+            }
         }
     }
 }

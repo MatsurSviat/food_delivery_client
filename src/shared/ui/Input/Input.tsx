@@ -18,6 +18,7 @@ interface IInputProps extends HTMLInputProps {
     position?: IconPosition;
     iconSize?: IconSize;
     inputColor?: InputColor;
+    promo?: boolean;
 }
 
 export const Input = memo((props: IInputProps) => {
@@ -32,6 +33,7 @@ export const Input = memo((props: IInputProps) => {
         position,
         iconSize,
         inputColor,
+        promo,
         ...otherProps
     } = props;
 
@@ -63,6 +65,7 @@ export const Input = memo((props: IInputProps) => {
                     ref={inputRef}
                     className={classNames(cls.Input, className, cls[`color-${inputColor}`], {
                         [cls.WithIcon]: icon != null,
+                        [cls.promo]: promo,
                     })}
                     tabIndex={0}
                     type={type}

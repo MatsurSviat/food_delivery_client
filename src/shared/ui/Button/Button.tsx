@@ -3,8 +3,8 @@ import classNames from 'classnames';
 
 import cls from './Button.module.scss';
 
-type ButtonSize = 'xxs' | 'xs' | 's' | 'l' | 'm' | 'xl'; // 40/40 | 76/33 | 90/30 | 111/40 | 248/45 | 302\50
-type ButtoColor = 'white' | 'yellow';
+type ButtonSize = 'xxxs' | 'xxs' | 'xs' | 's' | 'l' | 'm' | 'xl'; // 26/26 | 40/40 | 76/33 | 90/30 | 111/40 | 248/45 | 302\50
+type ButtonColor = 'white' | 'yellow';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -12,9 +12,9 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     wave?: boolean;
     circle?: boolean;
-    color?: ButtoColor;
+    color?: ButtonColor;
     outlined?: boolean;
-    cross?: boolean;
+    close?: boolean;
 }
 
 export const Button = memo((props: IButtonProps) => {
@@ -27,7 +27,7 @@ export const Button = memo((props: IButtonProps) => {
         wave,
         circle,
         outlined,
-        cross,
+        close,
         ...otherProps
     } = props;
 
@@ -39,7 +39,7 @@ export const Button = memo((props: IButtonProps) => {
                 [cls.wave]: wave,
                 [cls.circle]: circle,
                 [cls.outlined]: outlined,
-                [cls.cross]: cross,
+                [cls.close]: close,
             })}
             {...otherProps}
         >

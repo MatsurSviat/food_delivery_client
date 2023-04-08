@@ -1,0 +1,32 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    width: 302px;
+    height: 140px;
+    margin-top: 26px;
+    padding: 21px;
+    background: #fcfcfc;
+    border-radius: 20px;
+
+    .subtotal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px dashed #bebebe;
+    }
+
+    .total-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #104e5b;
+        font-size: 18px;
+        line-height: 28px;
+
+        .price {
+            color: #ff6347;
+        }
+    }
+}

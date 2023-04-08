@@ -1,14 +1,13 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import NotificationsIcon from 'shared/assets/icons/bell.svg';
 import FavoriteIcon from 'shared/assets/icons/book.svg';
 import HomeIcon from 'shared/assets/icons/home.svg';
 import ProfileIcon from 'shared/assets/icons/profile.svg';
 import OrderIcon from 'shared/assets/icons/shopping_bag.svg';
 import { ROUTES } from 'shared/constants/routes';
 import { Icon } from 'shared/ui/Icon';
-
-import NotificationsIcon from '../../shared/assets/icons/bell.svg';
 
 import styles from './NavBar.module.scss';
 
