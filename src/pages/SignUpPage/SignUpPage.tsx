@@ -18,7 +18,7 @@ export const SignUpPage = memo(() => {
     const [userName, setUserName] = useState<string>('');
     const [userEmail, setUserEmail] = useState<string>('');
     const [userPassword, setUserPassword] = useState<string>('');
-    const [passwordShown, setPasswordShown] = useState(false);
+    const [passwordShown, setPasswordShown] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
     const handlerUserData = useCallback((value: string, name?: string) => {

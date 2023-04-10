@@ -17,7 +17,7 @@ export const SignInPage = memo(() => {
     const { wrapper, form, password, forgot } = styles;
     const [userEmail, setUserEmail] = useState<string>('first@mail.ru');
     const [userPassword, setUserPassword] = useState<string>('test-pass');
-    const [passwordShown, setPasswordShown] = useState(false);
+    const [passwordShown, setPasswordShown] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
     const handlerUserData = useCallback((value: string, name?: string) => {

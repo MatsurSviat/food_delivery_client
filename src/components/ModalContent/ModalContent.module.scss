@@ -1,0 +1,28 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    justify-content: flex-end;
+
+    .meal-image {
+        width: 317px;
+        height: 317px;
+        border-radius: 0 40px;
+    }
+
+    .info-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 317px;
+        height: 426px;
+        padding: 22px 20px 32px 30px;
+        background: #fff;
+        border-radius: 40px 0;
+        box-shadow: 0 4px 15px rgba(0 0 0 / 5%);
+
+        .title-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

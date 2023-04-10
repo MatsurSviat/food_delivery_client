@@ -11,7 +11,7 @@ import styles from './ProfilePage.module.scss';
 export const ProfilePage = memo(() => {
     const { wrap, card, active, account } = styles;
     const tabStyle = styles['tab-container'];
-    const [tab, setTab] = useState(2);
+    const [tab, setTab] = useState<number>(2);
 
     const toggleTab = useCallback(
         (index: number): void => {

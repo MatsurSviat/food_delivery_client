@@ -31,6 +31,7 @@ export const HomePage = memo(() => {
                 <FoodCard />
                 <FoodCard />
             </div>
+            
         </div>
     );
 });
