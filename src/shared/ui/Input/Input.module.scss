@@ -3,11 +3,11 @@
 
     .InputLabel {
         display: inline-block;
-        color: var(--palette-text-main-sub);
+        color: var(--palette-text-sub-label);
         font-weight: 400;
         font-size: 12px;
         line-height: 28px;
-        
+
         &.InputLabelRadio {
             margin-right: 40px;
         }
@@ -24,6 +24,11 @@
             font-size: 14px;
             line-height: 28px;
             border-bottom: 1px solid #104e5b;
+
+            ::placeholder {
+                color: var(--palette-text-main);
+                opacity: 1;
+            }
         }
 
         &.purpose-search {
@@ -31,6 +36,10 @@
             font-weight: 400;
             font-size: 14px;
             line-height: 28px;
+
+            ::placeholder {
+                color: #616f80;
+            }
         }
 
         .InputIcon {
@@ -70,7 +79,7 @@
 
             &.color-white {
                 padding-left: 48px;
-                background: #fff;
+                background: var(--palette-background-sub);
                 border-radius: 20px;
             }
 
@@ -79,8 +88,12 @@
                 width: 302px;
                 height: 55px;
                 padding-left: 48px;
-                background: #fff;
+                background: var(--palette-background-sub);
                 border-radius: 15px;
+
+                ::placeholder {
+                    color: #b5b5b5;
+                }
             }
         }
     }

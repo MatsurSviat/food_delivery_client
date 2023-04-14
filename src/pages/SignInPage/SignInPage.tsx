@@ -16,7 +16,7 @@ export const SignInPage = memo(() => {
     const navigate = useNavigate();
     const { wrapper, form, password, forgot } = styles;
     const [userEmail, setUserEmail] = useState<string>('first@mail.ru');
-    const [userPassword, setUserPassword] = useState<string>('test-pass');
+    const [userPassword, setUserPassword] = useState<string>('test-pass1');
     const [passwordShown, setPasswordShown] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 

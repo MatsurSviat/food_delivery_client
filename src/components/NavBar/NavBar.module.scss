@@ -17,9 +17,9 @@
             width: 50px;
             height: 50px;
             background: #fdc27a;
-            border: 2px solid #fff;
+            border: 2px solid var(--paletter-background-border);
             border-radius: 50%;
-            box-shadow: 0 0 0 10px #f2f6f7;
+            box-shadow: 0 0 0 10px var(--paletter-background-border);
         }
 
         .footer-figure {
@@ -35,7 +35,7 @@
             justify-content: center;
             width: 146px;
             height: 50px;
-            background: #fff;
+            background: var(--palette-background-sub);
             border-radius: 20px 0 40px;
             box-shadow: 0 4px 5px rgba(0 0 0 / 1%);
             transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -45,7 +45,7 @@
             width: 67px;
             height: 34px;
             margin-top: 16px;
-            background: #fff;
+            background: var(--palette-background-sub);
             box-shadow: 0 4px 5px rgba(0 0 0 / 1%);
         }
 
@@ -57,7 +57,7 @@
             justify-content: center;
             width: 147px;
             height: 50px;
-            background: #fff;
+            background: var(--palette-background-sub);
             border-radius: 20px 0 40px;
             box-shadow: 0 4px 5px rgba(0 0 0 / 1%);
         }

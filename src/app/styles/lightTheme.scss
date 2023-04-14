@@ -1,11 +1,16 @@
 :root[app-theme='light'] {
     // backgrounds
     --palette-background-main: #f2f6f7;
-    --palette-background-light: #fff;
+    --palette-background-sub: #fff;
+    --paletter-background-border: #f2f6f7;
+    --paletter-background-border-white: #fff;
 
     // text
     --palette-text-main: #104e5b;
-    --palette-text-main-sub: #616f80;
-    --palette-text-dark: #2b2d33;
+    --palette-text-sub: #616f80;
+    --palette-text-sub-log: #2b2d33;
+    --palette-text-sub-label: #616f80;
+    --palette-text-sub-header: #104e5b;
+    --palette-text-gold: #104e5b;
     --palette-text-light: #fff;
 }

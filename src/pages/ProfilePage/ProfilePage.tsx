@@ -9,7 +9,7 @@ import { ThemesSwitcher } from 'components/ThemesSwitcher/ThemesSwitcher';
 import styles from './ProfilePage.module.scss';
 
 export const ProfilePage = memo(() => {
-    const { wrap, card, active, account } = styles;
+    const { wrap, card, active, account, title } = styles;
     const tabStyle = styles['tab-container'];
     const [tab, setTab] = useState<number>(2);
 
@@ -31,9 +31,9 @@ export const ProfilePage = memo(() => {
             </div>
             <div className={`${tabStyle} ${tab === 2 ? active : ''}`}>
                 <div className={card}>
-                    <p>My Card</p>
+                    <p className={title}>My Card</p>
                     <CreditCard />
-                    <p>Payment Method</p>
+                    <p className={title}>Payment Method</p>
                     <PayCard />
                 </div>
             </div>

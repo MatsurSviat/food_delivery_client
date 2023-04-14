@@ -1,1 +1,0 @@
-export { MultipleItems } from './Slider';

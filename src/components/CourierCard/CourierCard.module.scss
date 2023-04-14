@@ -1,7 +1,7 @@
 .wrap {
     width: 302px;
     height: 136px;
-    background: #fff;
+    background: var(--palette-background-sub);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0 0 0 / 5%);
 
@@ -33,6 +33,7 @@
             padding-bottom: 18px;
 
             .name {
+                color: var(--palette-text-sub-header);
                 font-weight: 700;
                 font-size: 14px;
                 font-style: normal;
@@ -112,14 +113,14 @@
                 }
 
                 .time {
-                    color: #104e5b;
+                    color: var(--palette-text-sub-header);
                     font-weight: 600;
                     font-size: 9px;
                     font-style: normal;
                 }
             }
         }
-        
+
         .delivery-city-cont {
             display: flex;
             gap: 6px;
@@ -155,7 +156,7 @@
                 }
 
                 .city {
-                    color: #104e5b;
+                    color: var(--palette-text-sub-header);
                     font-weight: 600;
                     font-size: 9px;
                     font-style: normal;

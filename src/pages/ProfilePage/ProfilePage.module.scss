@@ -21,6 +21,10 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
+
+            .title {
+                color: var(--palette-text-sub-header);
+            }
         }
     }
 

@@ -7,7 +7,7 @@ type AvatarSize = 'small' | 'big';
 
 interface IAvatarProps {
     className?: string;
-    src: string;
+    src: string | undefined;
     size?: AvatarSize;
     alt?: string;
     bordered?: boolean;

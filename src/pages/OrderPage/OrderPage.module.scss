@@ -12,6 +12,7 @@
         margin-top: 29px;
 
         .title {
+            color: var(--palette-text-sub-header);
             font-weight: 700;
             line-height: 36px;
         }
@@ -19,8 +20,6 @@
         .svg {
             width: 24px;
             height: 24px;
-            filter: brightness(0) saturate(100%) invert(22%) sepia(77%) saturate(455%) hue-rotate(143deg)
-                brightness(95%) contrast(96%);
         }
     }
 
@@ -41,11 +40,13 @@
         .apply {
             position: absolute;
             margin-left: 60%;
+            color: #104e5b;
         }
     }
 
     .confirm-btn {
         margin-top: 26px;
+        color: #104e5b;
         font-weight: 600;
         font-size: 16px;
         line-height: 28px;

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import { Coupon } from 'components/Coupon';
-import { FoodCard } from 'components/FoodCard';
+// import { FoodCard } from 'components/FoodCard';
 import { FoodFilterHeader } from 'components/FoodFilterHeader';
 import { Button } from 'shared/ui/Button';
 
@@ -25,6 +25,7 @@ export const FavoritePage = memo(() => {
                 </Button>
             </div>
             <div className={foodCards}>
+                {/* <FoodCard />
                 <FoodCard />
                 <FoodCard />
                 <FoodCard />
@@ -33,8 +34,7 @@ export const FavoritePage = memo(() => {
                 <FoodCard />
                 <FoodCard />
                 <FoodCard />
-                <FoodCard />
-                <FoodCard />
+                <FoodCard /> */}
             </div>
         </div>
     );

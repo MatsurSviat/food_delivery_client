@@ -11,7 +11,7 @@
         width: 240px;
         height: 150px;
         padding: 24px 26px 27px 28px;
-        background: #fff;
+        background: var(--palette-background-sub);
         border-radius: 20px;
         box-shadow: 0 4px 15px rgba(0 0 0 / 5%);
 
@@ -29,6 +29,7 @@
         justify-content: center;
         margin-top: -6px;
         padding: -23px 2px;
+        color: #104e5b;
         font-size: 41px;
         text-align: cet;
         text-align: center;
