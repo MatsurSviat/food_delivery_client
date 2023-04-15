@@ -11,7 +11,10 @@ export interface IMeal {
 }
 
 export interface IMealSchema {
-    mealData: IMeal[] | null;
+    mealData: IMeal[];
     isLoading: boolean;
     error?: string;
+    searchQuery: string;
+    sort: string;
+    currentMeal: IMeal;
 }

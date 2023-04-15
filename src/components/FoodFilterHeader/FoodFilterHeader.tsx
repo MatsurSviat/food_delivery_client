@@ -9,6 +9,7 @@ import { Avatar } from 'shared/ui/Avatar';
 import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
 import { Input } from 'shared/ui/Input';
+import { mealActions, useAppDispatch } from 'store';
 import { getUserPhoto } from 'store/selectors/user.selectors';
 
 import styles from './FoodFilterHeader.module.scss';
@@ -20,6 +21,7 @@ interface IAttribute extends IInfo {
 export const FoodFilterHeader = memo(({ info, attribute }: IAttribute) => {
     const { title, slider } = styles;
     const userPhoto = useSelector(getUserPhoto);
+    const dispatch = useAppDispatch();
 
     return (
         <>
@@ -38,6 +40,7 @@ export const FoodFilterHeader = memo(({ info, attribute }: IAttribute) => {
                     position="left"
                     inputColor="white"
                     icon={<SearchIcon />}
+                    onChange={value => dispatch(mealActions.setSearchQuery(value))}
                 />
                 <Button size="xxs" circle>
                     <Icon src={FilterIcon} />
