@@ -1,11 +1,21 @@
 /* eslint-disable @typescript-eslint/indent */
 import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import { ReactComponent as LikeImage } from 'shared/assets/icons/favorite.svg';
 import { ReactComponent as LikeImageRed } from 'shared/assets/icons/favorite_red.svg';
 import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
-import { addFavoriteMeal, mealActions, modalActions, removeFavoriteMeal, useAppDispatch } from 'store';
+import {
+    addFavoriteMeal,
+    itemData,
+    mealActions,
+    modalActions,
+    orderActions,
+    orderItemActions,
+    removeFavoriteMeal,
+    useAppDispatch,
+} from 'store';
 
 import styles from './FoodCard.module.scss';
 
@@ -39,6 +49,7 @@ export const FoodCard = memo(
             styles;
 
         const dispatch = useAppDispatch();
+        const orderItem = useSelector(itemData);
 
         const handleFavoriteClick = useCallback(() => {
             if (isFavorite) {
@@ -47,6 +58,11 @@ export const FoodCard = memo(
                 dispatch(addFavoriteMeal(mealId));
             }
         }, [dispatch, mealId, isFavorite]);
+
+        const addToOrderHandleClick = useCallback(() => {
+            dispatch(orderItemActions.addItem(mealId));
+            dispatch(orderActions.addItemToOrder(orderItem));
+        }, [dispatch, mealId, orderItem]);
 
         return (
             <div
@@ -85,7 +101,9 @@ export const FoodCard = memo(
                         {mealPrice}
                     </p>
                     <div className={addButtonCont} onClick={e => e.stopPropagation()}>
-                        <Button wave>Add to card</Button>
+                        <Button wave onClick={addToOrderHandleClick}>
+                            Add to card
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -3,11 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from 'components/OrderCard';
 import { TotalPrice } from 'components/TotalPrice';
-import CloseIcon from 'shared/assets/icons/close.svg';
+import { ReactComponent as CloseIcon } from 'shared/assets/icons/close.svg';
 import { ReactComponent as PromoIcon } from 'shared/assets/icons/promo_code.svg';
 import { ROUTES } from 'shared/constants/routes';
 import { Button } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
 import { Input } from 'shared/ui/Input';
 
 import styles from './OrderPage.module.scss';
@@ -24,7 +23,7 @@ export const OrderPage = memo(() => {
             <div className={styles['title-wrap']}>
                 <h2 className={title}>My Order</h2>
                 <Button close onClick={closeHandle}>
-                    <Icon src={CloseIcon} className={icon} />
+                    <CloseIcon className={icon} />
                 </Button>
             </div>
             <div className={orders}>

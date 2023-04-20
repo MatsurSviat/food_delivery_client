@@ -4,4 +4,4 @@ import type { IStateSchema } from '../types/state-schema';
 
 const selectSelf = (state: IStateSchema) => state;
 
-export const isModalOpen = createSelector(selectSelf, state => state.modal.isOpen);
+export const itemData = createSelector(selectSelf, state => state.orderItem.itemData);
