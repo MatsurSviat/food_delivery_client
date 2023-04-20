@@ -1,9 +1,15 @@
+import { createSelector } from '@reduxjs/toolkit';
+
 import type { IStateSchema } from '../types/state-schema';
 
-export const getAllMeals = (state: IStateSchema) => state.meal.mealData;
+const selectSelf = (state: IStateSchema) => state;
 
-export const searchQuery = (state: IStateSchema) => state.meal.searchQuery;
+export const getAllMeals = createSelector(selectSelf, state => state.meal.mealData);
 
-export const sortMeals = (state: IStateSchema) => state.meal.sort;
+export const searchQuery = createSelector(selectSelf, state => state.meal.searchQuery);
 
-export const currentMeal = (state: IStateSchema) => state.meal.currentMeal;
+export const sortMeals = createSelector(selectSelf, state => state.meal.sortByCategory);
+
+export const sortMealsByTaste = createSelector(selectSelf, state => state.meal.sortByTaste);
+
+export const currentMeal = createSelector(selectSelf, state => state.meal.currentMeal);

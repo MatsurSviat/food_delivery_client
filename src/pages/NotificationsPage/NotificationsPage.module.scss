@@ -1,9 +1,9 @@
 .wrap {
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    gap: 52px;
     justify-content: flex-start;
-    margin: 29px 0 0 24px;
+    margin: 47px 0 0 34px;
 
     .title {
         color: var(--palette-text-sub-header);
@@ -14,6 +14,6 @@
     .couriers {
         display: flex;
         flex-direction: column;
-        gap: 27px;
+        gap: 28px;
     }
 }

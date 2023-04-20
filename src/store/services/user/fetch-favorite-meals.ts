@@ -1,25 +1,19 @@
+import type { IMeal } from 'store/types/meal';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
 
-import type { IUser } from '../../types';
 import type { AsyncThunkConfig } from '../../types/async-thunk-config';
-import { fetchMealsData } from '../meal';
-import { fetchFavoriteMeals } from './fetch-favorite-meals';
 
-export const fetchUserData = createAsyncThunk<IUser, void, AsyncThunkConfig<string>>(
-    'user/fetchUserData',
+export const fetchFavoriteMeals = createAsyncThunk<IMeal[], void, AsyncThunkConfig<string>>(
+    'user/getFavoriteMeals',
     async (_, thunkAPI) => {
         const {
             rejectWithValue,
-            dispatch,
             extra: { api },
         } = thunkAPI;
 
         try {
-            const response = await api.get<IUser>('/user/self');
-
-            dispatch(fetchMealsData());
-            dispatch(fetchFavoriteMeals());
+            const response = await api.get<IMeal[]>('/user/favorite-meals');
 
             return response.data;
         } catch (err) {

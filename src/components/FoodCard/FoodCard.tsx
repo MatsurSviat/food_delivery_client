@@ -1,14 +1,16 @@
-import { memo } from 'react';
+/* eslint-disable @typescript-eslint/indent */
+import { memo, useCallback } from 'react';
 
-import likeImage from 'shared/assets/icons/favorite.svg';
+import { ReactComponent as LikeImage } from 'shared/assets/icons/favorite.svg';
+import { ReactComponent as LikeImageRed } from 'shared/assets/icons/favorite_red.svg';
 import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
-import { mealActions, modalActions, useAppDispatch } from 'store';
+import { addFavoriteMeal, mealActions, modalActions, removeFavoriteMeal, useAppDispatch } from 'store';
 
 import styles from './FoodCard.module.scss';
 
 interface IFoodCard {
-    mealId: number;
+    mealId: string;
     mealName: string;
     mealTaste: string;
     mealPrice: number;
@@ -17,6 +19,7 @@ interface IFoodCard {
     mealCategory: string;
     mealCookTime: number;
     mealRating: number;
+    isFavorite: boolean;
 }
 
 export const FoodCard = memo(
@@ -30,11 +33,22 @@ export const FoodCard = memo(
         mealCategory,
         mealCookTime,
         mealRating,
+        isFavorite,
     }: IFoodCard) => {
         const { wrap, imageContainer, foodImg, likeImg, textContainer, title, subtitle, price, dollar, addButtonCont } =
             styles;
 
         const dispatch = useAppDispatch();
+
+        const handleFavoriteClick = useCallback(() => {
+            if (isFavorite) {
+                dispatch(removeFavoriteMeal(mealId));
+            } else {
+                dispatch(addFavoriteMeal(mealId));
+            }
+        }, [dispatch, mealId, isFavorite]);
+
+        console.log(`favorite: ${isFavorite}, mealId: ${mealId}`);
 
         return (
             <div
@@ -43,7 +57,6 @@ export const FoodCard = memo(
                     dispatch(modalActions.openModal());
                     dispatch(
                         mealActions.setCurrentMeal({
-                            currentId: mealId,
                             currentImg: mealPhoto,
                             currentTitle: mealName,
                             currentDescription: mealDescription,
@@ -58,9 +71,11 @@ export const FoodCard = memo(
             >
                 <div className={imageContainer}>
                     <Icon src={`${process.env.REACT_APP_API_URL}/${mealPhoto}`} alt="foodImg" className={foodImg} />
-                    <Button square>
-                        <Icon src={likeImage} alt="likeImg" className={likeImg} />
-                    </Button>
+                    <div onClick={e => e.stopPropagation()}>
+                        <Button square onClick={handleFavoriteClick}>
+                            {isFavorite ? <LikeImageRed className={likeImg} /> : <LikeImage className={likeImg} />}
+                        </Button>
+                    </div>
                 </div>
                 <div className={textContainer}>
                     <p className={title}>{mealName}</p>

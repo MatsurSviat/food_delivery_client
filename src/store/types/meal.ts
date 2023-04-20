@@ -1,5 +1,5 @@
 export interface IMeal {
-    id: number;
+    id: string;
     img: string;
     title: string;
     description: string;
@@ -15,6 +15,7 @@ export interface IMealSchema {
     isLoading: boolean;
     error?: string;
     searchQuery: string;
-    sort: string;
+    sortByCategory: string;
+    sortByTaste: string;
     currentMeal: IMeal;
 }

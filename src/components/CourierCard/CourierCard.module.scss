@@ -14,6 +14,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 3px;
             margin-right: 13px;
             margin-left: 15px;
 
@@ -33,6 +34,7 @@
             padding-bottom: 18px;
 
             .name {
+                padding-top: 6px;
                 color: var(--palette-text-sub-header);
                 font-weight: 700;
                 font-size: 14px;
@@ -75,11 +77,12 @@
 
     .delivery-info-cont {
         display: flex;
+        gap: 2px;
         align-items: center;
 
         .delivery-time-cont {
             display: flex;
-            gap: 6px;
+            gap: 7px;
             margin-top: 13px;
             margin-right: 12px;
             margin-left: 20px;
@@ -104,6 +107,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                line-height: 10px;
 
                 .time-title {
                     color: #bebebe;
@@ -123,7 +127,7 @@
 
         .delivery-city-cont {
             display: flex;
-            gap: 6px;
+            gap: 7px;
 
             .city-img-cont {
                 display: flex;
@@ -147,6 +151,7 @@
                 flex-direction: column;
                 justify-content: center;
                 margin-top: 13px;
+                line-height: 10px;
 
                 .city-title {
                     color: #bebebe;

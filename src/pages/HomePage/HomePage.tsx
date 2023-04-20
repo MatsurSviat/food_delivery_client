@@ -5,6 +5,7 @@ import { FoodCard } from 'components/FoodCard';
 import { FoodFilterHeader } from 'components/FoodFilterHeader';
 import { category } from 'shared/constants/meal';
 import { getAllMeals, searchQuery, sortMeals } from 'store';
+import { getFavoriteMeals } from 'store/selectors/user.selectors';
 
 import styles from './HomePage.module.scss';
 
@@ -13,6 +14,7 @@ export const HomePage = memo(() => {
     const meals = useSelector(getAllMeals);
     const quary = useSelector(searchQuery);
     const sort = useSelector(sortMeals);
+    const favoriteMeals = useSelector(getFavoriteMeals);
 
     const mealsRender = (info: string) => {
         switch (info) {
@@ -41,12 +43,13 @@ export const HomePage = memo(() => {
                 {quary.length === 0
                     ? mealsRender(sort).map(meal => (
                         <FoodCard
-                            key={meal.id}
+                            isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
+                            key={meal?.id}
+                            mealId={meal?.id}
                             mealName={meal.title}
                             mealTaste={meal.taste}
                             mealPrice={meal.price}
                             mealPhoto={meal.img}
-                            mealId={meal.id}
                             mealDescription={meal.description}
                             mealCategory={meal.category}
                             mealCookTime={meal.cookTime}
@@ -55,12 +58,13 @@ export const HomePage = memo(() => {
                     ))
                     : searchedMeals.map(meal => (
                         <FoodCard
+                            isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
                             key={meal.id}
+                            mealId={meal.id}
                             mealName={meal.title}
                             mealTaste={meal.taste}
                             mealPrice={meal.price}
                             mealPhoto={meal.img}
-                            mealId={meal.id}
                             mealDescription={meal.description}
                             mealCategory={meal.category}
                             mealCookTime={meal.cookTime}

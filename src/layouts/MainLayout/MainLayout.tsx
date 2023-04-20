@@ -6,7 +6,7 @@ import { ModalContent } from 'components/ModalContent';
 import { NavBar } from 'components/NavBar';
 import { LOCATION_ORDER } from 'shared/constants/url';
 import { Modal } from 'shared/ui/Modal';
-import { fetchMealsData, fetchUserData, isModalOpen, modalActions, useAppDispatch } from 'store';
+import { fetchUserData, isModalOpen, modalActions, useAppDispatch } from 'store';
 
 import cls from './MainLayout.module.scss';
 
@@ -21,7 +21,6 @@ export const MainLayout = ({ children }: PropsWithChildren) => {
 
     useEffect(() => {
         dispatch(fetchUserData());
-        dispatch(fetchMealsData());
     }, [dispatch, location]);
 
     return (

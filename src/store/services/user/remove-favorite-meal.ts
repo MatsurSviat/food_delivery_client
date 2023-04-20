@@ -1,14 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
 
-import type { IUser } from '../../types';
 import type { AsyncThunkConfig } from '../../types/async-thunk-config';
-import { fetchMealsData } from '../meal';
 import { fetchFavoriteMeals } from './fetch-favorite-meals';
 
-export const fetchUserData = createAsyncThunk<IUser, void, AsyncThunkConfig<string>>(
-    'user/fetchUserData',
-    async (_, thunkAPI) => {
+export const removeFavoriteMeal = createAsyncThunk<void, string, AsyncThunkConfig<string>>(
+    'user/removeFavoriteMeal',
+    async (mealId, thunkAPI) => {
         const {
             rejectWithValue,
             dispatch,
@@ -16,9 +14,8 @@ export const fetchUserData = createAsyncThunk<IUser, void, AsyncThunkConfig<stri
         } = thunkAPI;
 
         try {
-            const response = await api.get<IUser>('/user/self');
+            const response = await api.delete<void>(`/user/${mealId}/favorite`);
 
-            dispatch(fetchMealsData());
             dispatch(fetchFavoriteMeals());
 
             return response.data;

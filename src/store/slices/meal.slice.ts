@@ -8,9 +8,10 @@ const initialState: IMealSchema = {
     isLoading: false,
     error: undefined,
     searchQuery: '',
-    sort: 'all',
+    sortByCategory: 'all',
+    sortByTaste: 'all',
     currentMeal: {
-        id: 0,
+        id: '',
         img: '',
         title: '',
         description: '',
@@ -27,7 +28,8 @@ export const mealSlice = createSlice({
     initialState,
     reducers: {
         setSearchQuery: (state, action) => ({ ...state, searchQuery: action.payload.toLocaleLowerCase() }),
-        setSort: (state, action) => ({ ...state, sort: action.payload }),
+        setSortBycategory: (state, action) => ({ ...state, sortByCategory: action.payload }),
+        setSortByTaste: (state, action) => ({ ...state, sortByTaste: action.payload }),
         setCurrentMeal: (state, action) => ({
             ...state,
             currentMeal: {

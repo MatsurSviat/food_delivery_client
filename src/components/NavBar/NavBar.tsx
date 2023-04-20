@@ -1,10 +1,10 @@
 import { memo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-import NotificationsIcon from 'shared/assets/icons/bell.svg';
-import FavoriteIcon from 'shared/assets/icons/book.svg';
-import HomeIcon from 'shared/assets/icons/home.svg';
-import ProfileIcon from 'shared/assets/icons/profile.svg';
+import { ReactComponent as NotificationsIcon } from 'shared/assets/icons/bell.svg';
+import { ReactComponent as FavoriteIcon } from 'shared/assets/icons/book.svg';
+import { ReactComponent as HomeIcon } from 'shared/assets/icons/home.svg';
+import { ReactComponent as ProfileIcon } from 'shared/assets/icons/profile.svg';
 import OrderIcon from 'shared/assets/icons/shopping_bag.svg';
 import { ROUTES } from 'shared/constants/routes';
 import { Icon } from 'shared/ui/Icon';
@@ -13,6 +13,8 @@ import styles from './NavBar.module.scss';
 
 export const NavBar = memo(() => {
     const { wrap } = styles;
+    const size = 22;
+    const location = useLocation();
 
     return (
         <nav className={wrap}>
@@ -23,19 +25,35 @@ export const NavBar = memo(() => {
                 <div className={styles['footer-figure']}>
                     <div className={styles['main-favorite']}>
                         <NavLink to={ROUTES.MAIN}>
-                            <Icon src={HomeIcon} alt="home" className={styles['home-img']} />
+                            <HomeIcon
+                                fill={location.pathname === ROUTES.MAIN ? '#fdc27a' : '#D1D1D1'}
+                                width={size}
+                                height={size}
+                            />
                         </NavLink>
                         <NavLink to={ROUTES.FAVORITE}>
-                            <Icon src={FavoriteIcon} alt="favorite" className={styles['favorite-img']} />
+                            <FavoriteIcon
+                                fill={location.pathname === `/${ROUTES.FAVORITE}` ? '#fdc27a' : '#D1D1D1'}
+                                width={size}
+                                height={size}
+                            />
                         </NavLink>
                     </div>
                     <div className={styles['empty-wrap']} />
                     <div className={styles['notific-profile']}>
                         <NavLink to={ROUTES.PROFILE}>
-                            <Icon src={ProfileIcon} alt="profile" className={styles['profile-img']} />
+                            <ProfileIcon
+                                fill={location.pathname === `/${ROUTES.PROFILE}` ? '#fdc27a' : '#D1D1D1'}
+                                width={size}
+                                height={size}
+                            />
                         </NavLink>
                         <NavLink to={ROUTES.NOTIFICATIONS}>
-                            <Icon src={NotificationsIcon} alt="notification" className={styles['notification-img']} />
+                            <NotificationsIcon
+                                fill={location.pathname === `/${ROUTES.NOTIFICATIONS}` ? '#fdc27a' : '#D1D1D1'}
+                                width={size}
+                                height={size}
+                            />
                         </NavLink>
                     </div>
                 </div>

@@ -2,4 +2,4 @@ export { getUserPhoto, getUserId, getUserName, getUserEmail } from './user.selec
 
 export { isModalOpen } from './modal.selectors';
 
-export { getAllMeals, searchQuery, sortMeals, currentMeal } from './meal.selectors';
+export { getAllMeals, searchQuery, sortMeals, currentMeal, sortMealsByTaste } from './meal.selectors';

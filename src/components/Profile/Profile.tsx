@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Avatar } from 'shared/ui/Avatar';
-import { getUserEmail, getUserId, getUserName, getUserPhoto } from 'store';
+import { getUserEmail, getUserName, getUserPhoto } from 'store';
 
 import styles from './Profile.module.scss';
 
@@ -16,11 +16,6 @@ export const Profile = memo(({ toggleTab, tab }: IToggleTab) => {
     const userPhoto = useSelector(getUserPhoto);
     const userName = useSelector(getUserName);
     const userEmail = useSelector(getUserEmail);
-    const userId = useSelector(getUserId);
-    // const hexString = userId?.toString().replace(/-/g, '');
-    // const base64String = Buffer.from(hexString)
-
-    // console.log(base64String);
 
     return (
         <div className={styles['profile-wrap']}>
@@ -30,7 +25,7 @@ export const Profile = memo(({ toggleTab, tab }: IToggleTab) => {
                 <div className={info}>
                     <p className={name}>{userName}</p>
                     <p className={subname}>{userEmail}</p>
-                    <p className={subname}>User ID: {userId}</p>
+                    <p className={subname}>User ID: 34A6V7</p>
                 </div>
             </div>
             <div className={tabs}>
