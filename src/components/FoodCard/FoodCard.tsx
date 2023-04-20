@@ -48,8 +48,6 @@ export const FoodCard = memo(
             }
         }, [dispatch, mealId, isFavorite]);
 
-        console.log(`favorite: ${isFavorite}, mealId: ${mealId}`);
-
         return (
             <div
                 className={wrap}

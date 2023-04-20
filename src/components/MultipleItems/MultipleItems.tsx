@@ -37,7 +37,7 @@ export const MultipleItems = ({ info }: IInfo) => {
                     size="s"
                     color={sort === name ? 'yellow' : 'white'}
                     style={{ width: 90 }}
-                    onClick={() => dispatch(mealActions.setSortBycategory(name))}
+                    onClick={() => dispatch(mealActions.setSort(name))}
                 >
                     {name}
                 </Button>

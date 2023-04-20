@@ -15,7 +15,6 @@ export interface IMealSchema {
     isLoading: boolean;
     error?: string;
     searchQuery: string;
-    sortByCategory: string;
-    sortByTaste: string;
+    sort: string;
     currentMeal: IMeal;
 }

@@ -5,7 +5,7 @@ import { Coupon } from 'components/Coupon';
 import { FoodCard } from 'components/FoodCard';
 import { FoodFilterHeader } from 'components/FoodFilterHeader';
 import { Button } from 'shared/ui/Button';
-import { fetchFavoriteMeals, sortMealsByTaste, useAppDispatch } from 'store';
+import { fetchFavoriteMeals, searchQuery, sortMeals, useAppDispatch } from 'store';
 import { getFavoriteMeals } from 'store/selectors/user.selectors';
 
 import styles from './FavoritePage.module.scss';
@@ -18,8 +18,8 @@ export const FavoritePage = memo(() => {
     const dispatch = useAppDispatch();
 
     const favoriteMeals = useSelector(getFavoriteMeals);
-    // const quary = useSelector(searchQuery);
-    const sort = useSelector(sortMealsByTaste);
+    const quary = useSelector(searchQuery);
+    const sort = useSelector(sortMeals);
 
     useEffect(() => {
         dispatch(fetchFavoriteMeals());
@@ -43,7 +43,7 @@ export const FavoritePage = memo(() => {
         }
     };
 
-    // const searchedMeals = favoriteMeals?.filter(meal => (meal.title || '').toLowerCase().includes(quary.toLowerCase()));
+    const searchedMeals = favoriteMeals?.filter(meal => (meal.title || '').toLowerCase().includes(quary.toLowerCase()));
 
     return (
         <div className={wrap}>
@@ -58,24 +58,10 @@ export const FavoritePage = memo(() => {
                 </Button>
             </div>
             <div className={foodCards}>
-                {mealsRender(sort)?.map(meal => (
-                    <FoodCard
-                        isFavorite={!!sort}
-                        key={meal.id}
-                        mealId={meal.id}
-                        mealName={meal.title}
-                        mealTaste={meal.taste}
-                        mealPrice={meal.price}
-                        mealPhoto={meal.img}
-                        mealDescription={meal.description}
-                        mealCategory={meal.category}
-                        mealCookTime={meal.cookTime}
-                        mealRating={meal.rating}
-                    />
-                ))}
-                {/* {quary.length === 0
+                {quary.length === 0
                     ? mealsRender(sort)?.map(meal => (
                         <FoodCard
+                            isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
                             key={meal.id}
                             mealId={meal.id}
                             mealName={meal.title}
@@ -91,6 +77,7 @@ export const FavoritePage = memo(() => {
                     : searchedMeals?.map(meal => (
                         <div key={meal.id}>
                             <FoodCard
+                                isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
                                 key={meal.id}
                                 mealId={meal.id}
                                 mealName={meal.title}
@@ -103,7 +90,7 @@ export const FavoritePage = memo(() => {
                                 mealRating={meal.rating}
                             />
                         </div>
-                    ))} */}
+                    ))}
             </div>
         </div>
     );

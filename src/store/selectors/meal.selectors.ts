@@ -8,8 +8,6 @@ export const getAllMeals = createSelector(selectSelf, state => state.meal.mealDa
 
 export const searchQuery = createSelector(selectSelf, state => state.meal.searchQuery);
 
-export const sortMeals = createSelector(selectSelf, state => state.meal.sortByCategory);
-
-export const sortMealsByTaste = createSelector(selectSelf, state => state.meal.sortByTaste);
+export const sortMeals = createSelector(selectSelf, state => state.meal.sort);
 
 export const currentMeal = createSelector(selectSelf, state => state.meal.currentMeal);
