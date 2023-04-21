@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from 'components/OrderCard';
@@ -8,12 +9,16 @@ import { ReactComponent as PromoIcon } from 'shared/assets/icons/promo_code.svg'
 import { ROUTES } from 'shared/constants/routes';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
+import { orderItems } from 'store';
 
 import styles from './OrderPage.module.scss';
 
 export const OrderPage = memo(() => {
     const navigate = useNavigate();
+    const orderedMeals = useSelector(orderItems);
+
     const { wrap, title, icon, orders, promo, apply } = styles;
+
     const closeHandle = () => {
         navigate(ROUTES.MAIN);
     };
@@ -27,8 +32,25 @@ export const OrderPage = memo(() => {
                 </Button>
             </div>
             <div className={orders}>
-                <OrderCard />
-                <OrderCard />
+                {orderedMeals.length !== 0 ? (
+                    orderedMeals?.map(meal => (
+                        <OrderCard
+                            key={meal?.id}
+                            id={meal?.id}
+                            img={meal?.img}
+                            title={meal?.title}
+                            description={meal?.description}
+                            price={meal?.price}
+                            taste={meal?.taste}
+                            category={meal?.category}
+                            cookTime={meal?.cookTime}
+                            rating={meal?.rating}
+                            count={meal?.count}
+                        />
+                    ))
+                ) : (
+                    <p>Your Order is empty</p>
+                )}
             </div>
             <div className={promo}>
                 <Input placeholder="Promo code . . ." iconSize="small" position="left" promo icon={<PromoIcon />} />

@@ -1,7 +1,10 @@
 import type { IMeal } from './meal';
 
+export interface IItems extends IMeal {
+    count: number;
+}
+
 export interface IOrderSchema {
-    orderItems: IMeal[];
-    orderTotalQuantity: number;
+    items: IItems[];
     orderTotalAmount: number;
 }
