@@ -1,15 +1,7 @@
-import type { IOrderItem } from './orderItem';
-
-export interface IOrder {
-    id: string;
-    items: IOrderItem[];
-    deliveryCost: number;
-    deliveryTime: number;
-    completed: boolean;
-}
+import type { IMeal } from './meal';
 
 export interface IOrderSchema {
-    orderData: IOrder | null;
-    isLoading: boolean;
-    error?: string;
+    orderItems: IMeal[];
+    orderTotalQuantity: number;
+    orderTotalAmount: number;
 }

@@ -2,19 +2,17 @@ import type { IOrderSchema } from 'store/types/order';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: IOrderSchema = {
-    orderData: null,
-    isLoading: false,
-    error: undefined,
+    orderItems: [],
+    orderTotalQuantity: 0,
+    orderTotalAmount: 0,
 };
 
 const orderSlice = createSlice({
     name: 'order',
     initialState,
     reducers: {
-        addItemToOrder: (state, action) => {
-            if (state.orderData) {
-                state.orderData.items.push(action.payload);
-            }
+        addToOrder: (state, action) => {
+            state.orderItems.push(action.payload);
         },
     },
 });

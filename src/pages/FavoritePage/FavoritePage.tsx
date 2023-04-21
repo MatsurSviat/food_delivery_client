@@ -63,15 +63,7 @@ export const FavoritePage = memo(() => {
                         <FoodCard
                             isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
                             key={meal.id}
-                            mealId={meal.id}
-                            mealName={meal.title}
-                            mealTaste={meal.taste}
-                            mealPrice={meal.price}
-                            mealPhoto={meal.img}
-                            mealDescription={meal.description}
-                            mealCategory={meal.category}
-                            mealCookTime={meal.cookTime}
-                            mealRating={meal.rating}
+                            meal={meal}
                         />
                     ))
                     : searchedMeals?.map(meal => (
@@ -79,15 +71,7 @@ export const FavoritePage = memo(() => {
                             <FoodCard
                                 isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
                                 key={meal.id}
-                                mealId={meal.id}
-                                mealName={meal.title}
-                                mealTaste={meal.taste}
-                                mealPrice={meal.price}
-                                mealPhoto={meal.img}
-                                mealDescription={meal.description}
-                                mealCategory={meal.category}
-                                mealCookTime={meal.cookTime}
-                                mealRating={meal.rating}
+                                meal={meal}
                             />
                         </div>
                     ))}
