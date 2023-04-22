@@ -1,5 +1,5 @@
-import { memo } from 'react';
-import { useSelector } from 'react-redux';
+import { memo, useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from 'components/OrderCard';
@@ -9,19 +9,33 @@ import { ReactComponent as PromoIcon } from 'shared/assets/icons/promo_code.svg'
 import { ROUTES } from 'shared/constants/routes';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { orderItems } from 'store';
+import { cartMessage, confirmOrder, orderActions, orderItems } from 'store';
 
 import styles from './OrderPage.module.scss';
 
 export const OrderPage = memo(() => {
     const navigate = useNavigate();
     const orderedMeals = useSelector(orderItems);
+    const dispatch = useDispatch();
+    const message = useSelector(cartMessage);
 
     const { wrap, title, icon, orders, promo, apply } = styles;
 
     const closeHandle = () => {
         navigate(ROUTES.MAIN);
     };
+
+    const confirmHandler = useCallback(() => {
+        // @ts-ignore
+        dispatch(confirmOrder());
+    }, [dispatch]);
+
+    useEffect(
+        () => () => {
+            dispatch(orderActions.setDefaultMessage());
+        },
+        [dispatch],
+    );
 
     return (
         <div className={wrap}>
@@ -49,7 +63,7 @@ export const OrderPage = memo(() => {
                         />
                     ))
                 ) : (
-                    <p>Your Order is empty</p>
+                    <p>{message}</p>
                 )}
             </div>
             <div className={promo}>
@@ -59,7 +73,7 @@ export const OrderPage = memo(() => {
                 </Button>
             </div>
             <TotalPrice />
-            <Button size="xl" className={styles['confirm-btn']}>
+            <Button size="xl" className={styles['confirm-btn']} onClick={confirmHandler}>
                 CONFIRM ORDER
             </Button>
         </div>

@@ -7,4 +7,7 @@ export interface IItems extends IMeal {
 export interface IOrderSchema {
     items: IItems[];
     orderTotalAmount: number;
+    isLoading: boolean;
+    error?: string;
+    cartMessage: string;
 }
