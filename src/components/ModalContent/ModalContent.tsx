@@ -1,19 +1,26 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
+import type { IMeal } from 'store/types/meal';
 
 import rateImg from 'shared/assets/icons/ic_star1.svg';
 import timeImg from 'shared/assets/icons/ic_time11.svg';
 import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
-import { currentMeal } from 'store';
+import { currentMeal, modalActions, orderActions, useAppDispatch } from 'store';
 
 import styles from './ModalContent.module.scss';
 
 export const ModalContent = memo(() => {
     const { wrap } = styles;
     const meal = useSelector(currentMeal);
+    const dispatch = useAppDispatch();
 
-    const { title, description, price, taste, cookTime, rating, img } = meal;
+    const { title, description, price, taste, cookTime, rating, img, count } = meal;
+
+    const addToCardHandleClick = (value: IMeal) => {
+        dispatch(orderActions.addCurrentMealToOrder(value));
+        dispatch(modalActions.closeModal());
+    };
 
     return (
         <div className={wrap}>
@@ -49,12 +56,14 @@ export const ModalContent = memo(() => {
                 </div>
                 <div className={styles['quantity-add-container']}>
                     <div className={styles['quantity-container']}>
-                        <Button size="xxxs">-</Button>
-                        <p>1</p>
-                        <Button size="xxxs">+</Button>
+                        <Button size="xxxs" onClick={() => dispatch(orderActions.decreaseCurrentMealCount())}>-</Button>
+                        <p>{count}</p>
+                        <Button size="xxxs" onClick={() => dispatch(orderActions.increaseCurrentMealCount())}>
+                            +
+                        </Button>
                     </div>
                     <div className={styles.addBtnCont}>
-                        <button type="button" className={styles.addButton}>
+                        <button type="button" className={styles.addButton} onClick={() => addToCardHandleClick(meal)}>
                             ADD TO CART
                         </button>
                     </div>

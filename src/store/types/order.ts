@@ -10,4 +10,5 @@ export interface IOrderSchema {
     isLoading: boolean;
     error?: string;
     cartMessage: string;
+    currentMeal: IItems;
 }

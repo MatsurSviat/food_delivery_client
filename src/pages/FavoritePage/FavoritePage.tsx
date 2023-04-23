@@ -25,7 +25,7 @@ export const FavoritePage = memo(() => {
         dispatch(fetchFavoriteMeals());
     }, [dispatch]);
 
-    const mealsRender = (info: string) => {
+    const mealsRenderSort = (info: string) => {
         switch (info) {
             case 'all':
                 return favoriteMeals;
@@ -43,7 +43,39 @@ export const FavoritePage = memo(() => {
         }
     };
 
-    const searchedMeals = favoriteMeals?.filter(meal => (meal.title || '').toLowerCase().includes(quary.toLowerCase()));
+    const searchedMeals = favoriteMeals?.filter(meal =>
+        (meal?.title || '').toLowerCase().includes(quary.toLowerCase()),
+    );
+
+    const renderMeals = () => {
+        if (favoriteMeals && favoriteMeals.length === 0) {
+            return <p>You do not have any favorite meals</p>;
+        }
+
+        if (quary.length === 0) {
+            return mealsRenderSort(sort)?.map(meal => (
+                <FoodCard
+                    isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
+                    key={meal?.id}
+                    meal={meal}
+                />
+            ));
+        }
+
+        if (searchedMeals) {
+            return searchedMeals?.map(meal => (
+                <div key={meal?.id}>
+                    <FoodCard
+                        isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
+                        key={meal?.id}
+                        meal={meal}
+                    />
+                </div>
+            ));
+        }
+
+        return null;
+    };
 
     return (
         <div className={wrap}>
@@ -57,25 +89,7 @@ export const FavoritePage = memo(() => {
                     See more
                 </Button>
             </div>
-            <div className={foodCards}>
-                {quary.length === 0
-                    ? mealsRender(sort)?.map(meal => (
-                        <FoodCard
-                            isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
-                            key={meal.id}
-                            meal={meal}
-                        />
-                    ))
-                    : searchedMeals && searchedMeals?.map(meal => (
-                        <div key={meal.id}>
-                            <FoodCard
-                                isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
-                                key={meal.id}
-                                meal={meal}
-                            />
-                        </div>
-                    ))}
-            </div>
+            <div className={foodCards}>{renderMeals()}</div>
         </div>
     );
 });

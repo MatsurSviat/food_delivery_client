@@ -1,14 +1,24 @@
 import type { IOrderSchema } from 'store/types/order';
 import { createSlice } from '@reduxjs/toolkit';
 
-// import { confirmOrder } from 'store/services/order';
-
 const initialState: IOrderSchema = {
     items: [],
     orderTotalAmount: 0,
     isLoading: false,
     error: undefined,
     cartMessage: 'Your Order is empty',
+    currentMeal: {
+        id: '',
+        img: '',
+        title: '',
+        description: '',
+        price: 0,
+        taste: '',
+        category: '',
+        cookTime: 0,
+        rating: 0,
+        count: 1,
+    },
 };
 
 const orderSlice = createSlice({
@@ -54,20 +64,45 @@ const orderSlice = createSlice({
         setDefaultMessage: state => {
             state.cartMessage = initialState.cartMessage;
         },
+
+        setCurrentMeal: (state, action) => ({
+            ...state,
+            currentMeal: {
+                id: action.payload.currentId,
+                img: action.payload.currentImg,
+                title: action.payload.currentTitle,
+                description: action.payload.currentDescription,
+                price: action.payload.currentPrice,
+                taste: action.payload.currentTaste,
+                category: action.payload.currentCategory,
+                cookTime: action.payload.currentCookTime,
+                rating: action.payload.currentRating,
+                count: initialState.currentMeal.count,
+            },
+        }),
+
+        addCurrentMealToOrder: (state, _) => {
+            const itemIndex = state.items.findIndex(item => item.id === state.currentMeal.id);
+
+            if (itemIndex >= 0) {
+                state.items[itemIndex].count += state.currentMeal.count;
+            } else {
+                state.items.push(state.currentMeal);
+            }
+        },
+
+        increaseCurrentMealCount: state => {
+            state.currentMeal.count += 1;
+        },
+
+        decreaseCurrentMealCount: state => {
+            if (state.currentMeal.count <= 1) {
+                state.currentMeal.count = initialState.currentMeal.count;
+            } else {
+                state.currentMeal.count -= 1;
+            }
+        },
     },
-    // extraReducers: builder =>
-    //     builder
-    //         .addCase(confirmOrder.pending, state => {
-    //             state.isLoading = true;
-    //             state.error = undefined;
-    //         })
-    //         .addCase(confirmOrder.fulfilled, state => {
-    //             state.isLoading = false;
-    //         })
-    //         .addCase(confirmOrder.rejected, (state, action) => {
-    //             state.isLoading = false;
-    //             state.error = action.payload;
-    //         }),
 });
 
 export const { actions: orderActions, reducer: orderReducer } = orderSlice;

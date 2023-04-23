@@ -9,3 +9,5 @@ export const orderItems = createSelector(selectSelf, state => state.order.items)
 export const totalPrice = createSelector(selectSelf, state => state.order.orderTotalAmount);
 
 export const cartMessage = createSelector(selectSelf, state => state.order.cartMessage);
+
+export const currentMeal = createSelector(selectSelf, state => state.order.currentMeal);

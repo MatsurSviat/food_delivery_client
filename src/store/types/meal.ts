@@ -16,5 +16,4 @@ export interface IMealSchema {
     error?: string;
     searchQuery: string;
     sort: string;
-    currentMeal: IMeal;
 }

@@ -6,7 +6,7 @@ import { ReactComponent as LikeImage } from 'shared/assets/icons/favorite.svg';
 import { ReactComponent as LikeImageRed } from 'shared/assets/icons/favorite_red.svg';
 import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
-import { addFavoriteMeal, mealActions, modalActions, orderActions, removeFavoriteMeal, useAppDispatch } from 'store';
+import { addFavoriteMeal, modalActions, orderActions, removeFavoriteMeal, useAppDispatch } from 'store';
 
 import styles from './FoodCard.module.scss';
 
@@ -51,7 +51,8 @@ export const FoodCard = memo(({ meal, isFavorite }: IMealFoodCard) => {
             onClick={() => {
                 dispatch(modalActions.openModal());
                 dispatch(
-                    mealActions.setCurrentMeal({
+                    orderActions.setCurrentMeal({
+                        currentId: id,
                         currentImg: img,
                         currentTitle: title,
                         currentDescription: description,
@@ -75,11 +76,11 @@ export const FoodCard = memo(({ meal, isFavorite }: IMealFoodCard) => {
             <div className={textContainer}>
                 <p className={titleMeal}>{title}</p>
                 <p className={subtitle}>
-                    `${taste} ${title}`
+                    `${taste && taste} ${title}`
                 </p>
                 <p className={priceMeal}>
                     <span className={dollar}>$</span>
-                    {price}
+                    {price && price}
                 </p>
                 <div className={addButtonCont} onClick={e => e.stopPropagation()}>
                     <Button wave onClick={() => addToCardHandleClick(meal)}>
