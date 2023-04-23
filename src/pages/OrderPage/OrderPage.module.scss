@@ -17,9 +17,13 @@
             line-height: 36px;
         }
 
-        .svg {
+        .icon {
             width: 24px;
             height: 24px;
+
+            path {
+                fill: var(--palette-text-sub-header);
+            }
         }
     }
 

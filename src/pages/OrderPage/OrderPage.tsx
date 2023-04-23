@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { OrderCard } from 'components/OrderCard';
@@ -9,14 +9,14 @@ import { ReactComponent as PromoIcon } from 'shared/assets/icons/promo_code.svg'
 import { ROUTES } from 'shared/constants/routes';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { cartMessage, confirmOrder, orderActions, orderItems } from 'store';
+import { cartMessage, confirmOrder, orderActions, orderItems, useAppDispatch } from 'store';
 
 import styles from './OrderPage.module.scss';
 
 export const OrderPage = memo(() => {
     const navigate = useNavigate();
     const orderedMeals = useSelector(orderItems);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const message = useSelector(cartMessage);
 
     const { wrap, title, icon, orders, promo, apply } = styles;
@@ -26,7 +26,6 @@ export const OrderPage = memo(() => {
     };
 
     const confirmHandler = useCallback(() => {
-        // @ts-ignore
         dispatch(confirmOrder());
     }, [dispatch]);
 

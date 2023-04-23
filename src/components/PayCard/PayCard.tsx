@@ -17,7 +17,7 @@ export const PayCard = memo(() => {
                 <Input
                     type="radio"
                     label="Credit Card"
-                    name="Credit Card"
+                    name="payment"
                     iconSize="small"
                     InputLabelRadio
                     className={inputRadio}
@@ -26,7 +26,7 @@ export const PayCard = memo(() => {
                 <Input
                     type="radio"
                     label="Paypal"
-                    name="Paypal"
+                    name="payment"
                     iconSize="small"
                     InputLabelRadio
                     className={inputRadio}
@@ -35,7 +35,7 @@ export const PayCard = memo(() => {
                 <Input
                     type="radio"
                     label="Google Pay"
-                    name="Google Pay"
+                    name="payment"
                     iconSize="small"
                     InputLabelRadio
                     className={inputRadio}

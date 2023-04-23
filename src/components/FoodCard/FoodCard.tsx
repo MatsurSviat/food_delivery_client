@@ -83,7 +83,7 @@ export const FoodCard = memo(({ meal, isFavorite }: IMealFoodCard) => {
                 </p>
                 <div className={addButtonCont} onClick={e => e.stopPropagation()}>
                     <Button wave onClick={() => addToCardHandleClick(meal)}>
-                        Add to card
+                        Add to cart
                     </Button>
                 </div>
             </div>

@@ -66,7 +66,7 @@ export const FavoritePage = memo(() => {
                             meal={meal}
                         />
                     ))
-                    : searchedMeals?.map(meal => (
+                    : searchedMeals && searchedMeals?.map(meal => (
                         <div key={meal.id}>
                             <FoodCard
                                 isFavorite={Boolean(favoriteMeals?.find(item => item?.id === meal?.id))}
